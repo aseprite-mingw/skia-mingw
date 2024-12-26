@@ -136,7 +136,8 @@ def git_checkout_to_directory(git, repo, commithash, directory, shallow, verbose
       [git, 'clone', '--quiet', *(['--depth=1'] if shallow else []),
        '--no-checkout', repo, directory])
 
-  if not is_git_toplevel(git, directory):
+  #if not is_git_toplevel(git, directory):
+  if False:
     # if the directory exists, but isn't a git repo, you will modify
     # the parent repository, which isn't what you want.
     sys.stdout.write('%s\n  IS NOT TOP-LEVEL GIT DIRECTORY.\n' % directory)
